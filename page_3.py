@@ -153,24 +153,24 @@ elif st.session_state.paso == 7:
 elif st.session_state.paso == 8:
 
     prompt = f"""
-            ACTÚA COMO:
-            {st.session_state.rol}
-            
-            OBJETIVO:
-            {st.session_state.objetivo}
-            
-            CONTEXTO:
-            {st.session_state.contexto}
-            
-            TAREAS:
-            {st.session_state.tareas}
-            
-            REGLAS:
-            {st.session_state.reglas}
-            
-            FORMATO DE SALIDA:
-            {st.session_state.salida}
-            """
+ACTÚA COMO:
+{st.session_state.rol}
+
+OBJETIVO:
+{st.session_state.objetivo}
+
+CONTEXTO:
+{st.session_state.contexto}
+
+TAREAS:
+{st.session_state.tareas}
+
+REGLAS:
+{st.session_state.reglas}
+
+FORMATO DE SALIDA:
+{st.session_state.salida}
+"""
 
     tecnica = st.session_state.tecnica
 
@@ -178,46 +178,46 @@ elif st.session_state.paso == 8:
 
         prompt += """
 
-            INSTRUCCIÓN ADICIONAL:
-            Piensa paso a paso antes de responder.
-            Explica tu razonamiento de manera lógica y estructurada.
-            """
+INSTRUCCIÓN ADICIONAL:
+Piensa paso a paso antes de responder.
+Explica tu razonamiento de manera lógica y estructurada.
+"""
 
     elif tecnica == "Few-Shot Prompting":
 
         prompt += """
                 
-            INSTRUCCIÓN ADICIONAL:
-            Antes de resolver la tarea,
-            genera ejemplos representativos
-            y utilízalos como referencia.
-            """
+INSTRUCCIÓN ADICIONAL:
+Antes de resolver la tarea,
+genera ejemplos representativos
+y utilízalos como referencia.
+"""
 
     elif tecnica == "Zero-Shot Prompting":
 
         prompt += """
                 
-            INSTRUCCIÓN ADICIONAL:
-            Analiza y detalla profundamente
-            cada tarea.
-            """
+INSTRUCCIÓN ADICIONAL:
+Analiza y detalla profundamente
+cada tarea.
+"""
 
     elif tecnica == "Role Prompting":
 
         prompt += """
 
-            INSTRUCCIÓN ADICIONAL:
-            Mantén el rol profesional durante toda la respuesta.
-            """
+INSTRUCCIÓN ADICIONAL:
+Mantén el rol profesional durante toda la respuesta.
+"""
 
     elif tecnica == "Structured Output":
 
         prompt += """
 
-            INSTRUCCIÓN ADICIONAL:
-            Devuelve la información utilizando una estructura clara,
-            con títulos y subtítulos bien definidos.
-            """
+INSTRUCCIÓN ADICIONAL:
+Devuelve la información utilizando una estructura clara,
+con títulos y subtítulos bien definidos.
+"""
 
     st.success("Prompt generado correctamente")
 

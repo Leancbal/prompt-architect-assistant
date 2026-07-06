@@ -7,14 +7,14 @@ st.sidebar.markdown("# Contenido:\n"
                     "### - Tecnicas de prompting\n"
                     "### - Concejos")
 
-with open("archivos\markdown_prompts.md", "r", encoding="utf-8") as markdown:
+with open("archivos/markdown_prompts.md", "r", encoding="utf-8") as markdown:
     contenido = markdown.read()
 
 st.markdown(contenido)
 
-st.image("archivos\image.png", caption="Componentes de un buen prompt", use_container_width= True)
+st.image("archivos/image.png", caption="Componentes de un buen prompt", use_container_width= True)
 
-with open("archivos\markdown_prompts2.md", "r", encoding="utf-8") as markdown2:
+with open("archivos/markdown_prompts2.md", "r", encoding="utf-8") as markdown2:
     contenido2= markdown2.read()
 
 st.markdown(contenido2)
