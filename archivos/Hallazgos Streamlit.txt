@@ -1,0 +1,11 @@
+()st.cache_data: es util para guardar datos en cache para no volver a ejecutar una funcion
+-- streamlit ejecuta pero antes revisa el nombre de la funcion, los parametros, revisa su cache y si
+ya tiene los resultados, no la ejecuta y devuelve esos datos, de lo contrario ejecuta normalmente
+-- ideal para funciones que devuelven datos serializables
+
+()st.cache_resource: devuelve el objeto guardado en el cache
+-- por ejemplo la conexion a una base de datos
+
+()Streamlit cuenta con un mecanismo de gestion de secretos
+-- se puede crear una conexion a una base de datos con simplemente ejecutar st.connection
+-- los datos de conexion estaran guardados en un archivo secreto y se ejecutaran a traves de st.connection 
