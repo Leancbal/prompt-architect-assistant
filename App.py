@@ -1,15 +1,15 @@
 import streamlit as st
 
 def main():
-    # Define the pages
-    page_1 = st.Page("page_1.py", title="Bienvenidos!", icon="📖")
+    # Definicion de paginas
+    page_1 = st.Page("page_1.py", title="Proyecto", icon="📖")
     page_2 = st.Page("page_2.py", title="Información", icon="📚")
-    page_3 = st.Page("page_3.py", title="Prompt Architect Assistant", icon="🛠️")
+    page_3 = st.Page("page_3.py", title="Prompt Maker", icon="🛠️")
 
-    # Set up navigation
-    pg = st.navigation([page_1, page_2, page_3])
+    # Navegacion de paginas
+    pg = st.navigation([page_3, page_2, page_1])
 
-    # Run the selected page
+    # Ejecutar la pagina seleccionada
     pg.run()
 
 main()

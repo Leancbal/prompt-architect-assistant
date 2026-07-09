@@ -1,13 +1,18 @@
 import streamlit as st
 
-st.title("🧠 Prompt Architect Assistant")
+st.title("🧠 Prompt Maker")
 st.write(
     "Construye prompts profesionales mediante esta guía paso a paso."
 )
 
+# Bloque de consulta: si "paso" no existe en el evento session_state, se asigna la variable paso
+# al evento y 1 a su valor para tomar como referencia de la interacción del usuario y guardar
+# la información cada vez que streamlit vuelva a ejecutar la página.
+# Al tener su valor en 1 sigue con el flujo de ejecución hacia las otras condiciones correctamente.
 if "paso" not in st.session_state:
     st.session_state.paso = 1
 
+# Inicio de paso 1: Objetivo
 if st.session_state.paso == 1:
 
     st.subheader("Paso 1: Objetivo")
@@ -16,13 +21,19 @@ if st.session_state.paso == 1:
         "¿Qué deseas lograr con este prompt?"
     )
 
+    # Si se oprime el botón "Siguiente", se guarda la respuesta del usuario en la variable
+    # st.session_state.objetivo, cambiamos el valor del evento a 2 y volvemos a ejecutar la
+    # pagina con la información ya guardada.
+    # Esta lógica se repite en los siguientes pasos.
     if st.button("Siguiente"):
         st.session_state.objetivo = objetivo
         st.session_state.paso = 2
         st.rerun()
+# Fin de paso 1: Objetivo
 
+# Inicio de paso 2: Contexto
 elif st.session_state.paso == 2:
-
+    
     st.subheader("Paso 2: Contexto")
 
     contexto = st.text_area(
@@ -33,7 +44,9 @@ elif st.session_state.paso == 2:
         st.session_state.contexto = contexto
         st.session_state.paso = 3
         st.rerun()
+# Fin de paso 2: Contexto
 
+# Inicio de paso 3: Rol
 elif st.session_state.paso == 3:
 
     st.subheader("Paso 3: Rol")
@@ -46,7 +59,9 @@ elif st.session_state.paso == 3:
         st.session_state.rol = rol
         st.session_state.paso = 4
         st.rerun()
+# Fin de paso 3: Rol
 
+# Inicio de paso 4: Tareas
 elif st.session_state.paso == 4:
 
     st.subheader("Paso 4: Tareas")
@@ -59,7 +74,9 @@ elif st.session_state.paso == 4:
         st.session_state.tareas = tareas
         st.session_state.paso = 5
         st.rerun()
+# Fin de paso 4: Tareas
 
+# Inicio de paso 5: Reglas
 elif st.session_state.paso == 5:
 
     st.subheader("Paso 5: Reglas")
@@ -72,7 +89,9 @@ elif st.session_state.paso == 5:
         st.session_state.reglas = reglas
         st.session_state.paso = 6
         st.rerun()
+# Fin de paso 5: Reglas
 
+# Inicio de paso 6: Formato de salida
 elif st.session_state.paso == 6:
 
     st.subheader("Paso 6: Salida esperada")
@@ -85,7 +104,11 @@ elif st.session_state.paso == 6:
         st.session_state.salida = salida
         st.session_state.paso = 7
         st.rerun()
+# Fin de paso 6: Formato de salida
 
+# Inicio de paso 7: Técnicas de prompting
+# Se desplega un menú con las opciones de las diferentes técnicas donde el usuario al 
+# elegir una se le muestra en pantalla una información breve sobre su elección.
 elif st.session_state.paso == 7:
 
     st.subheader("Paso 7: Técnicas de Prompting")
@@ -149,7 +172,13 @@ elif st.session_state.paso == 7:
         st.session_state.tecnica = tecnica
         st.session_state.paso = 8
         st.rerun()
+# Fin de paso 7: Técnicas de prompting
 
+# Inicio de paso 8: Resultado final en pantalla
+# Muestra el resultado: prompt completo + técnica de prompting en formato markdown.
+# Mensaje de éxito.
+# Botón para copiar el prompt.
+# Botón para volver a ejecutar y borrar la información almacenada en session_state.
 elif st.session_state.paso == 8:
 
     prompt = f"""
@@ -232,3 +261,5 @@ con títulos y subtítulos bien definidos.
             del st.session_state[key]
 
         st.rerun()
+# Inicio de paso 8: Resultado final en pantalla.
+# Fin del programa.

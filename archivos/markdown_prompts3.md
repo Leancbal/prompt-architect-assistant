@@ -1,6 +1,6 @@
 ### ¿Qué es este proyecto?
 
-**_Prompt Architect Assistant es una aplicación desarrollada con 
+**_Prompt Maker es una aplicación desarrollada con 
 Python & Streamlit cuyo objetivo es ayudar a las personas a crear 
 prompts más efectivos para interactuar con modelos de Inteligencia 
 Artificial._**
@@ -35,7 +35,7 @@ La aplicación se divide en tres secciones:
     Espacio educativo donde se presentan conceptos fundamentales relacionados 
     con prompts, componentes de un prompt efectivo y técnicas de Prompt Engineering.
 
-3. **_🛠️Prompt Architect Assistant_**
+3. **_🛠️Prompt Maker_**
 
     Asistente interactivo que guía al usuario mediante preguntas para construir 
     un prompt personalizado. Una vez completado el proceso, el sistema genera un 
