@@ -9,7 +9,7 @@ def main():
     # Navegacion de paginas
     pg = st.navigation([page_3, page_2, page_1])
 
-    # Ejecutar la pagina seleccionada
+    # Ejecuta la pagina seleccionada
     pg.run()
 
 main()

@@ -1,4 +1,5 @@
 import streamlit as st
+from st_copy_to_clipboard import st_copy_to_clipboard
 
 st.title("🧠 Prompt Maker")
 st.write(
@@ -254,6 +255,9 @@ con títulos y subtítulos bien definidos.
         prompt,
         language="markdown"
     )
+
+    st_copy_to_clipboard(prompt, "Copiar Prompt")
+    
 
     if st.button("Crear nuevo prompt"):
 

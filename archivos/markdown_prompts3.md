@@ -26,21 +26,21 @@ en Python para construir una herramienta práctica que ayude a los usuarios a:_*
 
 La aplicación se divide en tres secciones:
 
-1. **_📖Bienvenidos_**
+1. **_🛠️Prompt Maker_**
 
-    Presentación del proyecto, objetivos, función y alcance.
+    Asistente interactivo que guía al usuario mediante preguntas para construir 
+    un prompt personalizado. Una vez completado el proceso, el sistema genera un 
+    prompt listo para utilizar en modelos de lenguaje como ChatGPT, Gemini, Claude 
+    o similares.
 
 2. **_📚Información_**
 
     Espacio educativo donde se presentan conceptos fundamentales relacionados 
     con prompts, componentes de un prompt efectivo y técnicas de Prompt Engineering.
 
-3. **_🛠️Prompt Maker_**
+3. **_📖Proyecto_**
 
-    Asistente interactivo que guía al usuario mediante preguntas para construir 
-    un prompt personalizado. Una vez completado el proceso, el sistema genera un 
-    prompt listo para utilizar en modelos de lenguaje como ChatGPT, Gemini, Claude 
-    o similares.
+    Presentación, objetivos, función y alcance.
 
 ### Problema que resuelve
 
