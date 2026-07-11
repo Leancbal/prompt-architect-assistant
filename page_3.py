@@ -238,7 +238,7 @@ cada tarea.
         prompt += """
 
 INSTRUCCIÓN ADICIONAL:
-Mantén el rol profesional durante toda la respuesta.
+Mantiene el rol profesional durante toda la respuesta.
 """
 
     elif tecnica == "Structured Output":
