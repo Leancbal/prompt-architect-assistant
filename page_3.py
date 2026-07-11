@@ -6,7 +6,7 @@ st.write(
     "Construye prompts profesionales mediante esta guía paso a paso."
 )
 
-# Bloque de consulta: si "paso" no existe en el evento session_state, se asigna la variable paso
+# Bloque de consulta: si "paso" no existe en session_state, se asigna la variable paso
 # al evento y 1 a su valor para tomar como referencia de la interacción del usuario y guardar
 # la información cada vez que streamlit vuelva a ejecutar la página.
 # Al tener su valor en 1 sigue con el flujo de ejecución hacia las otras condiciones correctamente.
@@ -176,10 +176,11 @@ elif st.session_state.paso == 7:
 # Fin de paso 7: Técnicas de prompting
 
 # Inicio de paso 8: Resultado final en pantalla
-# Muestra el resultado: prompt completo + técnica de prompting en formato markdown.
+# Muestra el resultado: prompt completo + técnica de prompting, en formato markdown.
 # Mensaje de éxito.
 # Botón para copiar el prompt.
-# Botón para volver a ejecutar y borrar la información almacenada en session_state.
+# Botones que redireccionan al usuario a la IA elegida.
+# Botón para volver a ejecutar, y borrar la información almacenada en session_state.
 elif st.session_state.paso == 8:
 
     prompt = f"""
@@ -257,13 +258,41 @@ con títulos y subtítulos bien definidos.
     )
 
     st_copy_to_clipboard(prompt, "Copiar Prompt")
-    
 
-    if st.button("Crear nuevo prompt"):
+    st.subheader("Elige una IA para probar tu prompt !", text_alignment="center")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.link_button(
+            "💬 ChatGPT",
+            "https://chatgpt.com"
+        )
+
+    with col2:
+        st.link_button(
+            "💎 Gemini",
+            "https://gemini.google.com"
+        )
+
+    with col3:
+        st.link_button(
+            "🧠 Claude",
+            "https://claude.ai"
+        )
+
+    with col4:
+        st.link_button(
+            "⚡ Grok",
+            "https://grok.com"
+        )
+    
+    st.write("#####")
+    if st.button("Crear nuevo prompt", width="stretch"):
 
         for key in list(st.session_state.keys()):
             del st.session_state[key]
 
         st.rerun()
-# Inicio de paso 8: Resultado final en pantalla.
+# Fin de paso 8: Resultado final en pantalla.
 # Fin del programa.
